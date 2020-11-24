@@ -68,7 +68,12 @@ def handle_message(event):
     # 受け取ったメッセージ
     text = event.message.text
 
-    if "こんにちは" in text:
+    if "おはよう" in text:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Good morning")
+         )
+    elif "こんにちは" in text:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="Hello World")
