@@ -88,13 +88,19 @@ def handle_message(event):
             ]
          )
     elif "ぶり" in text:
-        img_url="https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
-        line_bot_api.replay_message(
-            event.replay_token,
+        img_url = "https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
+        line_bot_api.reply_message(
+            event.reply_token,
             [
                 TextSendMessage(text="ぶり!!"),
                 ImageSendMessage(img_url, img_url)
             ]
+        )
+
+    elif "url" in text:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="https://dotinstall.com/")
         )
 
     elif "通知" in text:
