@@ -102,6 +102,14 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text="https://dotinstall.com/")
         )
+    
+    elif "何したの" in text:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="こんにちは")
+            TextSendMessage(text="今日はプログラミングの勉強をしました")
+            TextSendMessage(text="難しかったです")
+        )
 
     elif "通知" in text:
         # 全ユーザにプッシュ
