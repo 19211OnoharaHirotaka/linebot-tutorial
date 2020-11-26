@@ -87,6 +87,16 @@ def handle_message(event):
                 ImageSendMessage(img_url, img_url)
             ]
          )
+    elif "ぶり" in text:
+        img_url="https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
+        line_bot_api.replay_message(
+            event.replay_token,
+            [
+                TextSendMessage(text="ぶり!!"),
+                ImageSendMessage(img_url, img_url)
+            ]
+        )
+
     elif "通知" in text:
         # 全ユーザにプッシュ
         line_bot_api.broadcast(
