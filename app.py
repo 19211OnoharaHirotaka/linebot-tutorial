@@ -64,6 +64,7 @@ def callback():
 def handle_message(event):
     # 受け取りデータの確認
     print(f"\nevent：{event}\n")
+    print(f"\n{event}\n")
 
     # 受け取ったメッセージ
     text = event.message.text
