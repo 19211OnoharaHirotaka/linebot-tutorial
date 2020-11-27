@@ -70,6 +70,7 @@ def handle_message(event):
     text = event.message.text
     profile = line_bot_api.get_profile(event.source.user_id)
     profile.user_id #-> ユーザーID
+    user_id = f"{profile.user_id}"
 
     if "おはよう" in text:
         line_bot_api.reply_message(
@@ -124,6 +125,12 @@ def handle_message(event):
 
     elif "ユーザーid" in text:
         line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=f"{profile.user_id}")
+         )
+
+    elif "idを送る" in text:
+        line_bot_api.push_message(
             event.reply_token,
             TextSendMessage(text=f"{profile.user_id}")
          )
