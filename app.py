@@ -120,17 +120,18 @@ def handle_message(event):
         # 全ユーザにプッシュ
         line_bot_api.broadcast(
             TextSendMessage(text="通知テスト")
-        )                                                                                                                                        
-    elif:
-    	line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text="「" + text + "」って何？")
-         )
-    
-    else　"ユーザーid" in text:
+        )      
+
+    elif　"ユーザーid" in text:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=f"{profile.user_id}")
+         )
+
+    else:
+    	line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="「" + text + "」って何？")
          )
 
 
