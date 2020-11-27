@@ -130,10 +130,8 @@ def handle_message(event):
          )
 
     elif "idを送る" in text:
-        line_bot_api.push_message(
-            event.reply_token,
-            TextSendMessage(text=f"{user_id}")
-         )
+        messages = TextSendMessage(text="Hellow!!")
+        line_bot_api.push_message(user_id, messages=messages)
 
     else:
     	line_bot_api.reply_message(
