@@ -132,7 +132,7 @@ def handle_message(event):
     elif "idを送る" in text:
         line_bot_api.push_message(
             event.reply_token,
-            TextSendMessage(text=f"{profile.user_id}")
+            TextSendMessage(text=f"{user_id}")
          )
 
     else:
