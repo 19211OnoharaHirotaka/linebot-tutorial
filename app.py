@@ -122,7 +122,7 @@ def handle_message(event):
             TextSendMessage(text="通知テスト")
         )      
 
-    elif　"ユーザーid" in text:
+    elif "ユーザーid" in text:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=f"{profile.user_id}")
