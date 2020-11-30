@@ -110,9 +110,9 @@ def handle_message(event):
     elif "google" in text:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="googleのサイトです"),
+            TextSendMessage(text="googleのサイトです")
             TextSendMessage(text="https://www.google.com/")
-         )
+        )
 
     elif "何したの" in text:            
         line_bot_api.reply_message(
