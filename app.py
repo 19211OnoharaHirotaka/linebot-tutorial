@@ -113,7 +113,17 @@ def handle_message(event):
             TextSendMessage(text="googleのサイトです"),
             TextSendMessage(text="https://www.google.com/")
          )
-    
+
+    elif "日付" in text:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="日付"),
+            $actions = array('type'  => 'datetimepicker',
+                 'label' => 'ラベル文字列',
+                 'data'  => 'ポストバックイベントのpostback.dataプロパティで返される文字列',
+                 'mode'  => 'datetime');
+         )
+
     elif "何したの" in text:            
         line_bot_api.reply_message(
             event.reply_token,
