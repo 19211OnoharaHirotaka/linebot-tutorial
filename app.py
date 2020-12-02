@@ -134,7 +134,7 @@ def handle_message(event):
 
     elif "全員通知" in text:
         # 全ユーザにプッシュ
-        img_url = "https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
+        img_url = "https://kyoheiomi.com/design/free_image"
         line_bot_api.broadcast(
             [
             TextSendMessage(text="全ユーザーに通知します"),
