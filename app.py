@@ -137,8 +137,7 @@ def handle_message(event):
         img_url = "https://kyoheiomi.com/design/free_image"
         line_bot_api.broadcast(
             [
-            TextSendMessage(text="全ユーザーに通知します"),
-            ImageSendMessage(img_url, img_url)
+            TextSendMessage(text="全ユーザーに通知します")
             ]
         )   
 
