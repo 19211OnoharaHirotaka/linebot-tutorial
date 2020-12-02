@@ -134,7 +134,7 @@ def handle_message(event):
 
     elif "全員通知" in text:
         # 全ユーザにプッシュ
-        img_url = "https://i0.wp.com/kyoheiomi.com/wp-content/uploads/2019/02/harinezumiIMGL8714_TP_V.jpg?resize=940%2C626&ssl=1"
+        img_url = "https://1.bp.blogspot.com/-Q9jOqnVqGuo/W64DqXTxwfI/AAAAAAABPIk/mn0XoaVlL2s_Sphqb-5WielV75A6JIEowCLcBGAs/s800/job_yarigai_sausyu.png"
         line_bot_api.broadcast(
             [
                 TextSendMessage(text="全ユーザーに通知します"),
