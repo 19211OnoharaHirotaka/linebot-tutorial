@@ -110,9 +110,13 @@ def handle_message(event):
     elif "google" in text:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="googleのサイトです"),
-            TextSendMessage(text="https://google.com/")
-        )
+            [
+                TextSendMessage(text="https://www.google.com/"),
+                TextSendMessage(text="googleのサイトです")
+            ]
+            
+         )
+         hello(name, messege)
 
     elif "何したの" in text:            
         line_bot_api.reply_message(
@@ -128,7 +132,15 @@ def handle_message(event):
         # 全ユーザにプッシュ
         line_bot_api.broadcast(
             TextSendMessage(text="通知テスト")
-        )      
+        )   
+
+    elif "全員通知" in text:
+        # 全ユーザにプッシュ
+        img_url = "https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
+        line_bot_api.broadcast(
+            TextSendMessage(text="全ユーザーに通知します"),
+            ImageSendMessage(img_url, img_url)
+        )   
 
     elif "ユーザーid" in text:
         line_bot_api.reply_message(
