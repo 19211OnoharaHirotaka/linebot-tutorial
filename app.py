@@ -120,9 +120,9 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             [
-            TextSendMessage(text="こんにちは"),
-            TextSendMessage(text="今日はプログラミングの勉強をしました"),
-            TextSendMessage(text="難しかったです")
+                TextSendMessage(text="こんにちは"),
+                TextSendMessage(text="今日はプログラミングの勉強をしました"),
+                TextSendMessage(text="難しかったです")
             ]
         )
 
@@ -134,10 +134,11 @@ def handle_message(event):
 
     elif "全員通知" in text:
         # 全ユーザにプッシュ
-        img_url = "https://kyoheiomi.com/design/free_image"
+        img_url = "https://i0.wp.com/kyoheiomi.com/wp-content/uploads/2019/02/harinezumiIMGL8714_TP_V.jpg?resize=940%2C626&ssl=1"
         line_bot_api.broadcast(
             [
-            TextSendMessage(text="全ユーザーに通知します")
+                TextSendMessage(text="全ユーザーに通知します"),
+                ImageSendMessage(img_url, img_url)
             ]
         )   
 
