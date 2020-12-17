@@ -154,7 +154,7 @@ def handle_message(event):
 
     elif "潮位" in text:
         f2 = open("get_data.py", "r")
-        res_data = json.load(f2)
+        res_data = py.load(f2)
         # a = get_data.v
         line_bot_api.reply_message(
             event.reply_token,
