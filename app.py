@@ -19,6 +19,9 @@ from linebot.models import (
 import os
 import json
 
+# ↓ 濱口(J2)のコード
+import get_data
+
 
 # ウェブアプリケーションフレームワーク:flaskの定義
 app = Flask(__name__)
@@ -153,14 +156,21 @@ def handle_message(event):
         line_bot_api.push_message(user_id, messages=messages)
 
     elif "潮位" in text:
-        f2 = open("get_data.py", "r")
-        res_data = py.load(f2)
+        # get_data.py 内の fromJSON関数 を呼び出してJSONデータを取得
+        data = get_data.fromJSON()
+        # f2 = open("get_data.py", "r")
+        # res_data = py.load(f2)
         # a = get_data.v
+        res = ""
+
+        for string in data:
+            res += string + " "
+
         line_bot_api.reply_message(
             event.reply_token,
             [
                 # TextSendMessage(text=f"{v_key}は{v[v_key]}です")
-                TextSendMessage(text=f"{a}")
+                TextSendMessage(text=res)
             ]
         )
         f2.close()
