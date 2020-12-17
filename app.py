@@ -153,7 +153,7 @@ def handle_message(event):
         messages = TextSendMessage(text="Hellow!!")
         line_bot_api.push_message(user_id, messages=messages)
 
-    elif "潮位joker" in text:            
+    elif "潮位" in text:            
         line_bot_api.reply_message(
             event.reply_token,
             [
