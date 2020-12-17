@@ -153,11 +153,13 @@ def handle_message(event):
         messages = TextSendMessage(text="Hellow!!")
         line_bot_api.push_message(user_id, messages=messages)
 
-    elif "潮位" in text:            
+    elif "潮位" in text:
+        a = get_data.v
         line_bot_api.reply_message(
             event.reply_token,
             [
-                TextSendMessage(text=f"{v_key}は{v[v_key]}です"),
+                # TextSendMessage(text=f"{v_key}は{v[v_key]}です")
+                TextSendMessage(text=f"{a}")
             ]
         )
 
