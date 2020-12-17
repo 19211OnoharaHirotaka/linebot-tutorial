@@ -18,6 +18,7 @@ from linebot.models import (
 
 import os
 import json
+import get_data
 
 
 # ウェブアプリケーションフレームワーク:flaskの定義
@@ -151,6 +152,14 @@ def handle_message(event):
     elif "idを送る" in text:
         messages = TextSendMessage(text="Hellow!!")
         line_bot_api.push_message(user_id, messages=messages)
+
+    elif "潮位joker" in text:            
+        line_bot_api.reply_message(
+            event.reply_token,
+            [
+                TextSendMessage(text=f"{v_key}は{v[v_key]}です"),
+            ]
+        )
 
     else:
     	line_bot_api.reply_message(
