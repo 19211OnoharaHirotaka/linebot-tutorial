@@ -18,7 +18,6 @@ from linebot.models import (
 
 import os
 import json
-import get_data
 
 
 # ウェブアプリケーションフレームワーク:flaskの定義
