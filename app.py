@@ -154,6 +154,8 @@ def handle_message(event):
         line_bot_api.push_message(user_id, messages=messages)
 
     elif "潮位" in text:
+        f2 = open("get_data.py", "r")
+        res_data = json.load(f2)
         a = get_data.v
         line_bot_api.reply_message(
             event.reply_token,
@@ -161,6 +163,7 @@ def handle_message(event):
                 # TextSendMessage(text=f"{v_key}は{v[v_key]}です")
                 TextSendMessage(text=f"{a}")
             ]
+        f2.close()
         )
 
     else:
