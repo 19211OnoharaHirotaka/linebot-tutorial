@@ -155,12 +155,10 @@ def handle_message(event):
         messages = TextSendMessage(text="Hellow!!")
         line_bot_api.push_message(user_id, messages=messages)
 
-    elif "潮位" in text:
+    elif "水温" in text:
+        water = get_umilog["sensor_val"][0]
         # get_data.py 内の fromJSON関数 を呼び出してJSONデータを取得
         data = get_umilog()
-        # f2 = open("get_data.py", "r")
-        # res_data = py.load(f2)
-        # a = get_data.v
         # res = ""
 
         # for string in data:
@@ -170,7 +168,7 @@ def handle_message(event):
             event.reply_token,
             [
                 # TextSendMessage(text=f"{v_key}は{v[v_key]}です")
-                TextSendMessage(text=data)
+                TextSendMessage(text=)
             ]
         )
 
