@@ -157,7 +157,7 @@ def handle_message(event):
 
     elif "潮位" in text:
         # get_data.py 内の fromJSON関数 を呼び出してJSONデータを取得
-        data = get_data.fromJSON()
+        data = get_data.get_umilog
         # f2 = open("get_data.py", "r")
         # res_data = py.load(f2)
         # a = get_data.v
