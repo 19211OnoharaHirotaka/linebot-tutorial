@@ -1,0 +1,95 @@
+{
+    "result": "success",
+    "json": [
+        {
+            "id": 3275577,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16.2",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16.2,\\\"28-00000cb055a5\\\":19.7}",
+            "sent_at": "2020-12-11T03:11:11.000Z",
+            "arrived_at": "2020-12-11T03:11:12.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        },
+        {
+            "id": 3276176,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16.4",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16.4,\\\"28-00000cb055a5\\\":18.8}",
+            "sent_at": "2020-12-11T03:41:06.000Z",
+            "arrived_at": "2020-12-11T03:41:07.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        },
+        {
+            "id": 3276789,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16.4",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16.4,\\\"28-00000cb055a5\\\":19.4}",
+            "sent_at": "2020-12-11T04:11:01.000Z",
+            "arrived_at": "2020-12-11T04:11:02.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        },
+        {
+            "id": 3277381,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16.3",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16.3,\\\"28-00000cb055a5\\\":20.2}",
+            "sent_at": "2020-12-11T04:40:59.000Z",
+            "arrived_at": "2020-12-11T04:41:00.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        },
+        {
+            "id": 3277997,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16.1",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16.1,\\\"28-00000cb055a5\\\":20.2}",
+            "sent_at": "2020-12-11T05:10:58.000Z",
+            "arrived_at": "2020-12-11T05:11:00.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        },
+        {
+            "id": 3278592,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16,\\\"28-00000cb055a5\\\":19.9}",
+            "sent_at": "2020-12-11T05:41:00.000Z",
+            "arrived_at": "2020-12-11T05:41:00.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        },
+        {
+            "id": 3279209,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16,\\\"28-00000cb055a5\\\":19.8}",
+            "sent_at": "2020-12-11T06:11:00.000Z",
+            "arrived_at": "2020-12-11T06:11:01.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        },
+        {
+            "id": 3279807,
+            "device_id": 3014,
+            "sensor_grp": "water",
+            "sensor_key": "top",
+            "sensor_val": "16.1",
+            "sensor_raw": "{\\\"28-012026f2ee7a\\\":16.1,\\\"28-00000cb055a5\\\":21.5}",
+            "sent_at": "2020-12-11T06:40:59.000Z",
+            "arrived_at": "2020-12-11T06:41:00.000Z",
+            "mac": "b8:27:eb:ee:e3:3b"
+        }
+    ],
+    "table": "sensor_logs",
+    "length": 8
+}
