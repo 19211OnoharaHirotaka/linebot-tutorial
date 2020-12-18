@@ -31,6 +31,7 @@ def get_umilog():
     #               print(res_data["json"][0])
     print(res_data["json"][0])
     f2.close()
+    return res_data["json"][0]
 
 # if __name__ == '__main__':
 #     main()

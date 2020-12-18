@@ -157,23 +157,22 @@ def handle_message(event):
 
     elif "潮位" in text:
         # get_data.py 内の fromJSON関数 を呼び出してJSONデータを取得
-        data = get_data.get_umilog
+        data = get_umilog()
         # f2 = open("get_data.py", "r")
         # res_data = py.load(f2)
         # a = get_data.v
-        res = ""
+        # res = ""
 
-        for string in data:
-            res += string + " "
+        # for string in data:
+        #     res += string + " "
 
         line_bot_api.reply_message(
             event.reply_token,
             [
                 # TextSendMessage(text=f"{v_key}は{v[v_key]}です")
-                TextSendMessage(text=res)
+                TextSendMessage(text=data)
             ]
         )
-        f2.close()
 
     else:
     	line_bot_api.reply_message(
