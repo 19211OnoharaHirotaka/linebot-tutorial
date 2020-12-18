@@ -2,12 +2,12 @@
 import API_get
 import json
 
-def fromJSON():
-    with open("result.json", "r") as f2:
-        res_data = json.load(f2)
-        return res_data["json"][0]
+# def fromJSON():
+#     with open("result.json", "r") as f2:
+#         res_data = json.load(f2)
+#         return res_data["json"][0]
 
-def main():
+def get_umilog():
     # トークン取得
     # token = API_get.get_token()
     # # print(token)
@@ -16,9 +16,11 @@ def main():
     # # 水温取得
     # res_data = API_get.get_water(token)
     # water = API_get.get_water(token)
-    # api叩きすぎない様に ロード
+
+    # api叩きすぎない様に ロード , result.jsonファイルを読み込む
     f2 = open("result.json", "r")
     res_data = json.load(f2)
+    
     # values = [v for k, v in res_data.items() if k == 'json']
 
     # for key,value in res_data.items(): 
@@ -30,5 +32,5 @@ def main():
     print(res_data["json"][0])
     f2.close()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

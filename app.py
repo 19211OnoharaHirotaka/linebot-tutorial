@@ -20,7 +20,7 @@ import os
 import json
 
 # ↓ 濱口(J2)のコード
-import get_data
+from get_data import get_umilog
 
 
 # ウェブアプリケーションフレームワーク:flaskの定義
