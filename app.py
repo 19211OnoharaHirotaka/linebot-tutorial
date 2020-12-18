@@ -168,7 +168,7 @@ def handle_message(event):
             event.reply_token,
             [
                 # TextSendMessage(text=f"{v_key}は{v[v_key]}です")
-                TextSendMessage(text=)
+                TextSendMessage(text=water)
             ]
         )
 
