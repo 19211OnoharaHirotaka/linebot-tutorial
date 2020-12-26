@@ -29,9 +29,9 @@ def get_umilog():
     #             # print(f'key:{v_key}  　value:{v[v_key]}')
     #               print(f"{v_key}は{v[v_key}です")
     #               print(res_data["json"][0])
-    print(res_data["json"][0])
+    print(res_data["json"])
     f2.close()
-    return res_data["json"][0]
+    return res_data["json"]
 
 # if __name__ == '__main__':
 #     main()
