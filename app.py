@@ -165,7 +165,8 @@ def handle_message(event):
         index = 0
         #data内の"sensor_val"のvalueを代入
         for value in data:
-            water_temp = data[index][sensor_val]
+            water_temp = data[index]['sensor_val']
+            index += 1
 
         line_bot_api.reply_message(
             event.reply_token,
