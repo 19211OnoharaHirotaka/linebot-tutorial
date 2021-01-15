@@ -17,6 +17,7 @@ from linebot.models import (
 )
 
 import os
+import requests
 import json
 import datetime
 from datetime import timedelta
