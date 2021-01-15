@@ -18,6 +18,8 @@ from linebot.models import (
 
 import os
 import json
+import datetime
+from datetime import timedelta
 
 # ↓ 濱口(J2)のコード
 from get_data import get_umilog
