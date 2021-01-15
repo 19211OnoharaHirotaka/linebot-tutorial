@@ -160,7 +160,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             [
-                ImageSendMessage(image1, image1)
+                ImageSendMessage(image1, image1),
                 TextSendMessage(text="[水温情報]\n先週より大きく下がっております。\n\n[潮位情報]\n先週より断続的にやや高い潮位が観測されております。\n網の高さに注意し、潮位の動向をこまめに確認してください。")
             ]
          )
@@ -179,7 +179,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             [
-                ImageSendMessage(image2, image2)
+                ImageSendMessage(image2, image2),
                 TextSendMessage(text="[のり網高さ提案]\nこれから高い潮位が予測されますので、網の高さを10号線に合わせることを提案します。")
             ]
          )
