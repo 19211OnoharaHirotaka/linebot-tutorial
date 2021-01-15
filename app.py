@@ -60,6 +60,20 @@ def callback():
         abort(400)
     return jsonify({"state": 200})
 
+# 海象データグラフ
+def graph(device_id, area, date):
+    url = "http://ik1-321-20609.vs.sakura.ne.jp/~swm/nori_graph"
+    json_data = {"device_id":device_id,"area":area,"date":date}
+    response = requests.post(url, data = json.dumps(json_data))
+    return response.text
+
+# 潮位データグラフ
+def graph_t(device_id, area, date):
+    url = "http://ik1-321-20609.vs.sakura.ne.jp/~swm/nori_graph_t"
+    json_data = {"device_id":device_id,"date":date,"area":area}
+    response = requests.post(url, data = json.dumps(json_data))
+    return response.text
+
 
 
 # MessageEvent　テキストメッセージ受け取った時
@@ -128,6 +142,47 @@ def handle_message(event):
                 TextSendMessage(text="難しかったです")
             ]
         )
+
+    elif "現在の海象情報" in text:
+        # ブイid
+        device_id = 3037
+
+        #地点
+        area = "権現前研究筏"
+
+        #日付
+        dt_now = datetime.datetime.now()
+
+        # 海象データグラフ生成
+        image1 = graph(device_id, area, dt_now.strftime("%Y-%m-%d"))
+        print(image1)
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            [
+                ImageSendMessage(image1, image1)
+                TextSendMessage(text="[水温情報]\n先週より大きく下がっております。\n\n[潮位情報]\n先週より断続的にやや高い潮位が観測されております。\n網の高さに注意し、潮位の動向をこまめに確認してください。")
+            ]
+         )
+
+    elif "のり網高さ" in text:
+        # ブイid
+        device_id = 3037
+
+        #地点
+        area = "権現前研究筏"
+
+        # 潮位データグラフ生成
+        image2 = graph_t(device_id, area, "2020-10-19")
+        print(image2)
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            [
+                ImageSendMessage(image2, image2)
+                TextSendMessage(text="[のり網高さ提案]\nこれから高い潮位が予測されますので、網の高さを10号線に合わせることを提案します。")
+            ]
+         )
 
     elif "通知" in text:
         # 全ユーザにプッシュ
