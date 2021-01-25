@@ -254,8 +254,8 @@ def handle_message(event):
     schedule.every(5).minutes.do(job)
 
     while True:
-    schedule.run_pending()
-    time.sleep(1)
+        schedule.run_pending()
+        time.sleep(1)
 
 
 
