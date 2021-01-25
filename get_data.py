@@ -2,33 +2,33 @@
 import API_get
 import json
 
-# def fromJSON():
-#     with open("result.json", "r") as f2:
-#         res_data = json.load(f2)
-#         return res_data["json"][0]
+def fromJSON():
+    with open("result.json", "r") as f2:
+        res_data = json.load(f2)
+        return res_data["json"][0]
 
 def get_umilog():
     # トークン取得
-    # token = API_get.get_token()
-    # # print(token)
-    # # token = ""
+    token = API_get.get_token()
+    # print(token)
+    # token = ""
     
-    # # 水温取得
-    # res_data = API_get.get_water(token)
-    # water = API_get.get_water(token)
+    # 水温取得
+    res_data = API_get.get_water(token)
+    water = API_get.get_water(token)
 
     # api叩きすぎない様に ロード , result.jsonファイルを読み込む
     f2 = open("result.json", "r")
     res_data = json.load(f2)
     
-    # values = [v for k, v in res_data.items() if k == 'json']
+    values = [v for k, v in res_data.items() if k == 'json']
 
-    # for key,value in res_data.items(): 
-    #     for v in res_data['json']:
-    #         for v_key in v.keys():
-    #             # print(f'key:{v_key}  　value:{v[v_key]}')
-    #               print(f"{v_key}は{v[v_key}です")
-    #               print(res_data["json"][0])
+    for key,value in res_data.items(): 
+        for v in res_data['json']:
+            for v_key in v.keys():
+                # print(f'key:{v_key}  　value:{v[v_key]}')
+                  print(f"{v_key}は{v[v_key}です")
+                  print(res_data["json"][0])
     print(res_data["json"])
     f2.close()
     return res_data["json"]
