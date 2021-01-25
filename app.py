@@ -22,7 +22,7 @@ import json
 import datetime
 from datetime import timedelta
 import schedule
-import time
+from datetime import time
 
 # ↓ 濱口(J2)のコード
 from get_data import get_umilog
@@ -243,7 +243,7 @@ def handle_message(event):
             TextSendMessage(text="「" + text + "」って何？")
          )
          
-    def weather_push():
+    def job():
         user_id = "Ua3f38a9ee46adafea775a8f1c288f910"  #ひろたかid(オウム返しbot)
         image_url = "https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
         
@@ -251,7 +251,11 @@ def handle_message(event):
         image = ImageSendMessage(image_url, image_url)
         line_bot_api.push_message(user_id, messages=pushText)
         
-    schedule.every().day.at("18:55").do(weather_push)
+    schedule.every(5).minutes.do(job)
+
+    while True:
+    schedule.run_pending()
+    time.sleep(1)
 
 
 
