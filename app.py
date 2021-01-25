@@ -94,15 +94,6 @@ def handle_message(event):
     profile.user_id #-> ユーザーID
     user_id = f"{profile.user_id}"
 
-def weather_push():
-    user_id = "Ua3f38a9ee46adafea775a8f1c288f910"  #ひろたかid(オウム返しbot)
-    image_url = "https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
-
-    pushText = TextSendMessage(text=f"[水温情報]\n先週より大きく下がっております。\n\n[潮位情報]\n先週より断面的にやや高い潮位が観測されております。\n網の高さに注意し、潮位の動向をこまめに確認してください。\n\n(練習用です)")
-    image = ImageSendMessage(image_url, image_url)
-    line_bot_api.push_message(user_id, messages=pushText)
-    
-schedule.every().day.at("18:55").do(weather_push)
 
     if "おはよう" in text:
         line_bot_api.reply_message(
@@ -251,7 +242,16 @@ schedule.every().day.at("18:55").do(weather_push)
             event.reply_token,
             TextSendMessage(text="「" + text + "」って何？")
          )
-
+         
+    def weather_push():
+        user_id = "Ua3f38a9ee46adafea775a8f1c288f910"  #ひろたかid(オウム返しbot)
+        image_url = "https://taisoda-ezaki-lab.herokuapp.com/static/images/tai.png"
+        
+        pushText = TextSendMessage(text=f"[水温情報]\n先週より大きく下がっております。\n\n[潮位情報]\n先週より断面的にやや高い潮位が観測されております。\n網の高さに注意し、潮位の動向をこまめに確認してください。\n\n(練習用です)")
+        image = ImageSendMessage(image_url, image_url)
+        line_bot_api.push_message(user_id, messages=pushText)
+        
+    schedule.every().day.at("18:55").do(weather_push)
 
 
 
